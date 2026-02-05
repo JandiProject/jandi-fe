@@ -1,73 +1,77 @@
-# React + TypeScript + Vite
+# 잔디 FE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 커밋 메시지 컨벤션
 
-Currently, two official plugins are available:
+### 1. 커밋 유형 지정
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+커밋 유형은 영어로 작성한 후 `:` 로 제목과 분리
+| 커밋 유형 | 의미 |
+| ---------------- | ------------------------------------------------------------ |
+| feat | 새로운 기능 추가 |
+| fix | 버그 수정 |
+| mod | 코드 구조 개선 & 크지 않은 수정 |
+| style | 코드 formatting, 세미콜론 누락, 코드 자체의 변경이 없는 경우 |
+| design | 사용자 UI 디자인 변경 |
+| comment | 필요한 주석 추가 및 변경 |
+| docs | 문서 수정 ex) README |
+| refactor | 코드 리팩토링 |
+| chore | pubspec 등 시스템 파일 수정 ex) .gitignore |
+| test | 테스트 코드, 리팩토링 테스트 코드 추가 |
+| rename | 파일 또는 폴더 명을 수정하거나 옮기는 작업만인 경우 |
+| remove | 파일을 삭제하는 작업만 수행한 경우 |
+| !BREAKING CHANGE | 커다란 API 변경의 경우 |
+| !HOTFIX | 급하게 치명적인 버그를 고쳐야 하는 경우 |
 
-## React Compiler
+### 2. 본문 작성
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+커밋 유형 이후 제목과 본문은 한글로 작성하여 내용이 잘 전달될 수 있도록 할 것  
+본문에는 변경한 내용과 이유 설명 (어떻게보다는 무엇 & 왜를 설명)
 
-## Expanding the ESLint configuration
+### 3. 마침표는 사용하지 않음
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 4. 제목은 50자 이내로 작성
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 5. 한 커밋에는 한 가지 문제만
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+추적 가능하게 유지해주기  
+너무 많은 문제를 한 커밋에 담으면 추적하기 어려움
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+### 6. 여러가지 항목이 있다면 글머리 기호를 통해 가독성 높이기
+
+```
+- 변경 내용 1
+- 변경 내용 2
+- 변경 내용 3
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 7. 자신의 코드가 직관적으로 바로 파악할 수 있다고 생각하지 않기
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+### 바람직한 커밋
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```
+feat: 프로필에 모국어 설정 기능 추가
+- lang 클릭 시 언어 목록 모달 띄워줌
+
+design: 시간표 레이아웃 수정
+- 요일 별 행 너비가 안 맞는 문제 해결
+```
+
+## 브랜치 컨벤션
+
+### 브랜치 유형 지정
+
+브랜치명은 어떤 작업인지 한 단어로 작성하고 `/` 로 제목과 분리
+| 브랜치 유형 | 의미 |
+| ---------------- | ------------------------------------------------------------ |
+| main | 서비스 중 코드 |
+| develop | 최종 개발 브랜치 |
+| feature | 기능 개발 |
+| hotfix | 버그 수정 |
+| refactor | 리팩토링 |
+| infra | 인프라 관련 |
+
+### 바람직한 브랜치 명
+
+```
+feature/login
 ```

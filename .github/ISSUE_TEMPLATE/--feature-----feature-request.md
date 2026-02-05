@@ -1,7 +1,7 @@
 ---
 name: '[  Feature ] - Feature request'
 about: 'Feature Template'
-title: '[ Feature ] - Issue Title'
+title: '[ Feature ] '
 labels: ''
 assignees: ''
 ---

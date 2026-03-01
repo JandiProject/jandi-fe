@@ -1,23 +1,27 @@
 ---
-name: '[  Feature ] - Feature request'
+name: '[Feature] - Feature request'
 about: 'Feature Template'
-title: '[ Feature ] '
+title: '[Feature] '
 labels: ''
 assignees: ''
 ---
 
 ## 계획된 개발 기능
 
-어떠한 기능 / 화면을 만드는지 적습니다.
+<!-- 어떠한 기능 / 화면을 만드는지 작성합니다. -->
 
 ## 기능 구현 세부사항
 
-해당 기능들이 요구하는 사항 등을 적습니다.
+<!-- 해당 기능들이 요구하는 사항 등을 작성합니다. -->
 
 ## 참고사항
 
-해당 기능들에 있어 특이사항을 적습니다.
+<!-- 해당 기능들에 있어 특이사항을 작성합니다. -->
 
-## check-lists
+## Check lists
 
-- [ ]
+- [ ] <!-- 체크리스트가 있으면 작성합니다. -->
+
+## 화면 구성
+
+<!-- 화면 구성 이미지 또는 피그마 링크를 추가합니다. -->

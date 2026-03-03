@@ -1,14 +1,10 @@
-import styled from "@emotion/styled";
-
-const Page = styled.div`
-  padding: 2rem;
-`;
+import * as S from "./SignupPage.styled";
 
 export function SignupPage() {
   return (
-    <Page>
+    <S.Page>
       <h1>회원가입</h1>
       <p>새 계정을 만듭니다.</p>
-    </Page>
+    </S.Page>
   );
 }

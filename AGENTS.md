@@ -21,21 +21,44 @@
 5. 주제 비율 분석
    - 블로그에 작성한 주제(카테고리)별 글 비율 표시
 
+## Tech Stack
+
+- Turborepo + pnpm
+- React 19 + TypeScript + Vite
+- Emotion (`@emotion/react`, `@emotion/styled`) for styling
+- React Router DOM for routing
+- Zustand for global state (auth 등)
+- TanStack Query for server state (API 캐시, 페칭)
+- Axios + `@jandi-fe/api` for API 호출
+
 ## Project Structure & Module Organization
 
-- `src/` contains app code: `main.tsx` bootstraps React, `App.tsx` is the root UI, styles live in `App.css` and `index.css`, and local assets are in `src/assets/`.
-- `public/` stores static files served as-is.
-- Root-level config files include `vite.config.ts`, `tsconfig*.json`, `eslint.config.js`, and `.prettierrc`.
-- Collaboration templates are in `.github/` (`PULL_REQUEST_TEMPLATE.md`, `ISSUE_TEMPLATE/`).
+- **Monorepo** (pnpm + Turborepo)
+  - `apps/web`: 메인 웹 앱
+  - `apps/widget`: 임베드용 위젯
+  - `packages/ui`: 공통 UI, 스타일 토큰, GlobalStyles
+  - `packages/api`: API 클라이언트 (instance, safeRequest, 에러 처리)
+  - `packages/eslint-config`, `packages/typescript-config`: 공유 설정
+
+- **페이지 구조** (`apps/web/src/pages/`)
+  - 각 페이지는 `[Name]Page/` 폴더에 `[Name]Page.tsx`, `[Name]Page.styled.ts`, `index.ts` 3개 파일로 구성
+  - 스타일은 항상 `.styled.ts` 파일로 분리
+
+- **컴포넌트 구조**
+  - `components/common/`: 공통 레이아웃 (Layout 등)
+  - 컴포넌트도 동일하게 `[Name].tsx`, `[Name].styled.ts`, `index.ts` 패턴 권장
+
+- **API 호출**
+  - `packages/api`의 `createInstance`로 클라이언트 생성, `safeRequest`로 요청
+  - 에러는 `ClientError`, `ServerError`, `NetworkError`로 통일
 
 ## Build, Test, and Development Commands
 
-- `npm install`: install dependencies.
-- `npm run dev`: start the Vite development server.
-- `npm run build`: run TypeScript project build (`tsc -b`) and create a production bundle.
-- `npm run preview`: serve the built app locally.
-- `npm run lint`: run ESLint across the repository.
-- `npm run format`: apply Prettier formatting to all files.
+- `pnpm install`: 의존성 설치
+- `pnpm dev`: 개발 서버 실행 (turbo로 web, widget 동시)
+- `pnpm build`: 프로덕션 빌드
+- `pnpm lint`: ESLint 실행
+- `pnpm format`: Prettier 포맷팅
 
 ## Coding Style & Naming Conventions
 
@@ -47,7 +70,7 @@
 ## Testing Guidelines
 
 - There is currently no dedicated test runner or `npm test` script.
-- Before opening a PR, run at minimum: `npm run lint` and `npm run build`.
+- Before opening a PR, run at minimum: `pnpm lint` and `pnpm build`.
 - If you add tests, place them near source files as `*.test.ts` or `*.test.tsx`, and document how to run them in the PR until a standard test command is introduced.
 
 ## Commit & Pull Request Guidelines

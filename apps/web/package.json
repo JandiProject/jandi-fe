@@ -11,12 +11,15 @@
     "format": "prettier . --write"
   },
   "dependencies": {
+    "@jandi-fe/api": "workspace:*",
     "@jandi-fe/ui": "workspace:*",
     "@emotion/react": "catalog:",
     "@emotion/styled": "catalog:",
+    "@tanstack/react-query": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "react-router-dom": "catalog:"
+    "react-router-dom": "catalog:",
+    "zustand": "catalog:"
   },
   "devDependencies": {
     "@jandi-fe/eslint-config": "workspace:*",

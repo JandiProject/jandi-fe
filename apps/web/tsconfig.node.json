@@ -1,5 +1,5 @@
 {
-  "extends": "@jandi-fe/typescript-config/react-vite-node.json",
+  "extends": "@jandi-fe/typescript-config/react-vite-node",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo"
   },

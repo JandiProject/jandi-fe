@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@jandi-fe/ui": "workspace:*",
+    "@emotion/react": "catalog:",
+    "@emotion/styled": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"
   },

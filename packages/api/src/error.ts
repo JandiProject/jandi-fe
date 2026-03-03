@@ -33,8 +33,15 @@ export function parseError(err: unknown): never {
     }
     throw new ClientError(status ?? 0, getMessageForStatus(status ?? 0), data);
   }
+  if (
+    err instanceof ClientError ||
+    err instanceof ServerError ||
+    err instanceof NetworkError
+  ) {
+    throw err;
+  }
   if (err instanceof Error) {
     throw new NetworkError(err.message, err);
   }
-  throw new NetworkError("Unknown error occurred", err);
+  throw new NetworkError("알 수 없는 오류가 발생했습니다.", err);
 }

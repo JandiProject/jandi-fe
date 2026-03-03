@@ -1,0 +1,11 @@
+{
+  "name": "@jandi-fe/typescript-config",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./base": "./base.json",
+    "./react-vite-app": "./react-vite-app.json",
+    "./react-vite-node": "./react-vite-node.json",
+    "./react-library": "./react-library.json"
+  }
+}

@@ -4,6 +4,8 @@
   "compilerOptions": {
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "jsx": "react-jsx",
+    "noEmit": false,
+    "emitDeclarationOnly": true,
     "declaration": true,
     "declarationMap": true
   }

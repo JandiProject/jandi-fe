@@ -1,9 +1,15 @@
 # Dependencies
 node_modules/
+.pnpm-store/
+
+# Lockfiles
 package-lock.json
+pnpm-lock.yaml
 
 # Build outputs
 build/
+dist/
+.turbo/
 
 # IDE
 .vscode/

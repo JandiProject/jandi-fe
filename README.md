@@ -1,5 +1,60 @@
 # 잔디 FE
 
+## 폴더 구조
+
+### 전체 모노레포
+
+```
+jandi-fe/
+├── apps/
+│   ├── web/                    # 메인 웹 앱
+│   └── widget/                 # 임베드용 위젯 (iframe)
+├── packages/
+│   ├── api/                    # API 클라이언트
+│   ├── ui/                     # 공통 UI, 스타일 토큰, GlobalStyles
+│   ├── eslint-config/          # ESLint 설정
+│   └── typescript-config/      # TypeScript 설정
+├── pnpm-workspace.yaml
+├── turbo.json
+└── package.json
+```
+
+폴더 구조는 **의존성 방향(하향식)**을 고려하여 설계했습니다. apps/가 packages/를 참조하며, 역방향 참조는 최소화함에 유의합니다.
+
+### apps/web
+
+```
+apps/web/src/
+├── main.tsx              # 앱 진입점
+├── App.tsx               # RouterProvider
+├── router.tsx            # 라우트 설정
+├── lib/                  # 공통 유틸 (api, queryClient)
+├── types/                # 앱 전용 타입
+├── constants/            # 상수
+├── hooks/                # 커스텀 훅
+├── assets/               # 정적 자산
+├── services/             # API 호출 로직
+├── components/
+│   └── common/           # 공통 컴포넌트 (Layout 등)
+└── pages/                # 페이지
+```
+
+### 실행
+
+```bash
+pnpm install
+pnpm dev                    # web, widget 동시 실행
+pnpm build
+
+# 특정 앱만 실행
+pnpm --filter @jandi-fe/web dev
+pnpm --filter @jandi-fe/widget dev
+
+# 또는 해당 폴더로 이동 후 실행
+cd apps/web && pnpm dev
+cd apps/widget && pnpm dev
+```
+
 ## 커밋 메시지 컨벤션
 
 ### 1. 커밋 유형 지정

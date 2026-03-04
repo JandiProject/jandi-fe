@@ -1,0 +1,8 @@
+{
+  "extends": "@jandi-fe/typescript-config/react-library",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist"
+  },
+  "include": ["src"]
+}

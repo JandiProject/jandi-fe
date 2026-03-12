@@ -1,13 +1,18 @@
 import styled from "@emotion/styled";
 
-export const Button = styled.button<{ $width: string | number }>`
+export const Button = styled.button<{
+  $width: string | number;
+  $height: string | number;
+  $backgroundColor?: string;
+}>`
   width: ${({ $width }) =>
     typeof $width === "number" ? `${$width}px` : $width};
-  height: 40px;
+  height: ${({ $height }) =>
+    typeof $height === "number" ? `${$height}px` : $height};
   padding: 0 16px;
   border: 0;
   border-radius: 10px;
-  background: #676767;
+  background: ${({ $backgroundColor }) => $backgroundColor ?? "#676767"};
   color: #fdfcfa;
   font-size: 14px;
   font-weight: 500;

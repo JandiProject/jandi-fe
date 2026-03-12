@@ -41,6 +41,14 @@ export function Layout() {
               회원가입
             </S.NavLink>
           </li>
+          <li>
+            <S.NavLink
+              to="/platform/add"
+              $active={location.pathname === "/platform/add"}
+            >
+              플랫폼 등록
+            </S.NavLink>
+          </li>
         </S.NavList>
       </S.Nav>
       <S.Main>

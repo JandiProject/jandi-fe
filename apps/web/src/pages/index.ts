@@ -4,3 +4,4 @@ export { SettingsPage } from "./SettingsPage";
 export { AccountPage } from "./AccountPage";
 export { LoginPage } from "./LoginPage";
 export { SignupPage } from "./SignupPage";
+export { AddPlatformPage } from "./AddPlatformPage";

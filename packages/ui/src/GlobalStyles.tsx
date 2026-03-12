@@ -32,8 +32,7 @@ const globalStyles = css`
 
   body {
     margin: 0;
-    display: flex;
-    place-items: center;
+    width: 100%;
     min-width: 320px;
     min-height: 100vh;
   }

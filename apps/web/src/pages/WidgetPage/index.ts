@@ -1,1 +1,1 @@
-export { WidgetPage } from "./WidgetPage";
+export * from "./WidgetPage";

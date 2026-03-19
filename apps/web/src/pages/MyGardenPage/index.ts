@@ -1,1 +1,1 @@
-export { MyGardenPage } from "./MyGardenPage";
+export * from "./MyGardenPage";

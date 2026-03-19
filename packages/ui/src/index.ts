@@ -1,5 +1,4 @@
-/// <reference path="./types/emotion.d.ts" />
-
+import "./types/emotion.d.ts";
 export { GlobalStyles } from "./GlobalStyles";
 export {
   colors,

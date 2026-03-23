@@ -71,8 +71,8 @@ export class ErrorBoundary extends Component<Props, State> {
               홈으로
             </S.SecondaryButton>
           </S.ButtonGroup>
-          {(isDev || error.stack) && (
-            <S.DebugSection open={isDev}>
+          {isDev && (
+            <S.DebugSection open>
               <summary>상세 정보</summary>
               <pre>{error.stack ?? error.message}</pre>
             </S.DebugSection>

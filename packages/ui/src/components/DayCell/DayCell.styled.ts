@@ -37,4 +37,9 @@ export const Cell = styled.button<{
     opacity: 0.6;
     cursor: not-allowed;
   }
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.gray[700]};
+    outline-offset: 2px;
+  }
 `;

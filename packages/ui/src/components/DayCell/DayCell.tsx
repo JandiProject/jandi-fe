@@ -23,16 +23,27 @@ export function DayCell({
   const variant = category && postCount > 0 ? "filled" : "empty";
   const clickable = day !== null && !isDisabled;
 
+  const dateText = day !== null ? `${day}일` : "";
+  const ariaLabel =
+    day !== null
+      ? postCount > 0
+        ? `${dateText}, ${postCount}개`
+        : dateText
+      : undefined;
+
   return (
     <S.Cell
       type="button"
+      aria-label={ariaLabel}
+      aria-hidden={day === null}
+      aria-pressed={clickable ? selected : undefined}
       disabled={!clickable}
       $variant={variant}
       $color={variant === "filled" ? color : null}
       $selected={selected}
       $clickable={clickable}
-      $disabled={isDisabled}
-      onClick={clickable ? onClick : undefined}
+      $disabled={!clickable}
+      onClick={onClick}
     />
   );
 }

@@ -23,27 +23,6 @@ export interface MyGardenPageData {
   jandi_data: JandiItem[];
 }
 
-export interface DateDetailItem {
-  date: string;
-  post_count: number;
-  category: string;
-}
-
-export interface DateDetailPost {
-  id: string;
-  title: string;
-  url?: string;
-  category: string;
-  date: string;
-}
-
-export interface DateDetailResponse {
-  period: JandiPeriod;
-  date: string;
-  jandi_data: DateDetailItem[];
-  posts: DateDetailPost[];
-}
-
 export const MOCK_MY_GARDEN_PAGE: MyGardenPageData = {
   user_summary: {
     total_posts: 28,

@@ -1,1 +1,1 @@
-export { AccountPage } from "./AccountPage";
+export * from "./AccountPage";

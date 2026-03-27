@@ -7,6 +7,7 @@ import {
   AccountPage,
   LoginPage,
   SignupPage,
+  AddPlatformPage,
 } from "./pages";
 
 export const router = createBrowserRouter([
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
       { path: "account", element: <AccountPage /> },
       { path: "login", element: <LoginPage /> },
       { path: "signup", element: <SignupPage /> },
+      { path: "platform/add", element: <AddPlatformPage /> },
     ],
   },
 ]);
